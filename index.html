@@ -1,0 +1,29 @@
+<html><head>
+    <title>Nerd's Build</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-85417367-1"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script><style type="text/css" data-glamor=""></style>
+  
+    <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <style type="text/css">.form-control, .container, .cc_cursor, body, .ogdlpmhglpejoiomcodnpjnfgcpmgale_default, body, html, input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"], input::-webkit-contacts-auto-fill-button, input:read-only {cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACM0lEQVRIS2OU/G8sx/9HTPEBy/2HPxhuPGFgZPjDQEXAqPHb0y2C2bNw19/DZ4+xXFjKwMB2l4Hx6i9q2cHI9l9H0+WfRV4uY0xQ+v/6uY+Yni1mYLh9m1o+YWT4r8LO+pvRwILZKL2KMdO76f+0ueeYbiz8yXDpLjUsYQQHxX8pLlYGbl33f/YpPoyONgv/b1x/nOn8YmoEF8QCsCUKHFy/uXWdmC3Tshlj/KgVXAgLoJawMrDqW/yjXnChWkCD4MK0gMrBhd0CLMHV8HfK3Asslxf+ZLhJUurCbQFacHkw2NnM+bd23QWWa0tISV34LUAKLg8mh8w0pjDvyL/Fs9+zfFxKbGYkbAFScPn8c8nJYIp0K//TO+c6y41FxAQXcRYgBVfoP+8Me0Yzy+l/V64lJriItwDqEz4GAV2ffw5Z8UxBXhF/iggGF2kWYA2u7tnX/95e9JP9Bih1/UUvhUm3ACW4fNIdGM0sZ31YOvXOwytLPhg++EAdC2Cpi4FPy+KXrqf48vdxjJseP/x45lH41kcf3yNbQp4P4AUkAwvDZ2l+z2CmxZGe8Z6nDh1Y9vLlg9zVx5+8gymhzAKoKdraDGym4rpTdI3NUu/fvrnsyYUr2RsefAAHF1UsABnkpifOLSUi1u/iE5i6b9uGPe/uPAoFWUI1C0CWGEsxcMlJyKwNjknyOHFo77KXtx/mUtUCmCU6GrpTdQ1NEq5cPLOM6haALPFUEeITkhab+OHduwgAxJwV0UArCBkAAAAASUVORK5CYII=") 1 1 , auto !important; }.btn.btn-info, .cc_pointer,[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration, .paper-button, .ytp-progress-bar-container, input[type=submit], :link, :visited, a > *, img, button, ::-webkit-scrollbar-button, .ogdlpmhglpejoiomcodnpjnfgcpmgale_pointer, ::-webkit-file-upload-button, button, .ytp-volume-panel, #myogdlpmhglpejoiomcodnpjnfgcpmgale .icon { cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAEPElEQVRIS62Ve0zTVxTHv7++kIcVEYICmyW8ChZ5mZiBG4ibQphkycS4iUwWXTIy3SYxGUyzsmXZdGaJOho3FgwhMShblETXFRmUUMbDTt1oi5Qij/JwFH5ALUhp+/stvzIKZZRuC+fPc889n/s9955zCV9LwtkIYmvvPbb+OojfLFhjI2JtWZ8K6dD0Gpvs+JxHd+ca5wfhQUdHnMaxq3KqrVXB6ilaaxUE6CQu1zJzLJez/0wlcSvPCm09CNALSorFR0RaeUsHgJIf5Drxf1VI2DfQkcGf0O+WUwDrs9lv3oZXj55xZ8Vt3p16Mu/6xpDNAYMPNPL2m9Ij0rahwb1RG0J5np4HUt8/6i07d0Ve92hS7gr8NwAEB8LUF6kdFQqb8qvUpJFMepr6MCZjl0KUlR7A4rBhNk2jT6/vnTaQMzzjM2/BzoQQr418jnGULDmd/6VLZfMAuwpwdlkPfp5O70yvulH6UfIt/7qU44dgGiPh4+/nCKMoCjabDVwu1+7T/NwIjaxJJNOQ6pVULAIA8MbDYw6zs691VTfE5T5/CFxwIftCgn1FBS5LP/ZYD3377ymSq/W/ugUwF56k4Z8p3FJQrOxp4QjJYEyPTdj3NZdVgVHEqOlpuofA6DC7f0StQ2/rg/7q+i6BW0BmODysKeEXnn0c+d4G301I00TC1+xt3yec8MOwtwlG3pwDsFC6lvJqDCnVEbIeo245xKlEL0f4RMfu3/OQeCOMx4sOwPSAATFDW8Ch2G5fZ/UJsbpWaxStCig6ezglOF6oYPPXQRX6BIH+wWB1TCJwxndVwED/ANoulLsHvJkZS+/+IN+ebNRzCpZYH/xJDmP74yCXKiYnJjE8PAyrxaLTlf2YLNWZDEtP41Sic98W0n6CYPu6lbDhYVA/Gm1teFUegyhhnEsV5DiJqSejUF6pKqnVGp16wgF4JYpfc/CSOHtpllm2BT+Vf4/8jHcwFbj6PTwdHUf95YqS2+2DKwP2RvJVOZfF25YCmO5tr7wJQ3c/El/LgOClJJcqVB0qzBlNpX3XbhRKdTAvBDoUrAQwdPdhVNcHDs0Cj2IjKC0eHj7zz3a5MYCx+xqKbFfFSnUmzb8CMEHMqPDy5WOkVQ1/URiU1bftDbfczLNmdN1VQFvf4jQ2VlWwNAnTvQmCeBifm59BK1lnbRPUdY0iDnddGHe9Vw0bEC0ChPyKnIviPLcdtUqA/r4KnQ3Ne7Ymbv9l1mbByB/aRcC+bXy/pJzs8dAXEv8341GdAqo7DYM7TuSGeFoJSfPFS6ec+uBAanh32sm3wl1dpDuytqEFFh8PPDWQZr1UcapWa5Q4Ab6uLC6dnTIVBESsOBjt+ZmnO6DsAPMvRKUnO5iMX3WnAWHJiZK7579jxoaEWVyugHb2/PPMlMWGmYkp0DSN9YGbHAHJR18Xyc6XgTVH6pb2wV8jq89u7sq2qQAAAABJRU5ErkJggg==") 0 0, auto !important; } </style></head>
+  
+  <body background="mustache_bg.jpg">
+  <center>
+    <h3 class="btn btn-info">Badtime Filter</h3>
+    <hr>
+    <button onclick="take_snapshot()" class="btn btn-success">Take Ugly Snapshot (looking to you janes)</button>
+  <button onclick="Yeetus()"> get yeeted to lipstick Filter </button>
+  </center>
+  
+  <script src="main.js"></script>
+  <script async="" src="https://drv.tw/inc/wd.js"></script>
+  
+  
+  
+  
+  <canvas id="defaultCanvas0" class="p5Canvas" width="300" height="300" style="width: 300px; height: 300px; position: absolute; left: 810px; top: 334.5px;"></canvas><video playsinline="" crossorigin="anonymous" width="300" height="300" style="width: 300px; height: 300px; display: none;"></video></body></html>
